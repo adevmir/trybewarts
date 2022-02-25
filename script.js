@@ -24,12 +24,11 @@ function enableEnviar() {
   }
 }
 
-const counterTextArea = document.getElementById('textArea');
+const counterTextArea = document.getElementById('textarea');
 const counterSpan = document.getElementById('counter');
 
 function contadorCaracter() {
   const textAreaLength = counterTextArea.value.length;
-  console.log(textAreaLength);
   const maxCharacteres = 500;
   const valorDecre = maxCharacteres - textAreaLength;
   counterSpan.innerText = valorDecre;
@@ -40,4 +39,4 @@ checkbox.addEventListener('change', enableEnviar);
 // https://www.youtube.com/watch?v=sRlgAjlwz0o
 // Ajudou a realizar o requisito 20 com o keypress
 
-counterTextArea.addEventListener('input', contadorCaracter);
+counterTextArea.addEventListener('keyup', contadorCaracter);
