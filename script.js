@@ -4,7 +4,6 @@ const getBtnId = document.getElementById('btnId');
 const checkbox = document.getElementById('agreement');
 const buttonEnviar = document.getElementById('submit-btn');
 
-
 function formButton() {
   // console.log(getEmailId.value);
   // console.log(getPassId.value);
@@ -32,7 +31,7 @@ checkbox.addEventListener('change', enableEnviar);
 
 const counterTextArea = document.getElementById('textArea');
 const counterSpan = document.getElementById('counter');
-counterTextArea.addEventListener('keypress', function(varx) {
+counterTextArea.addEventListener('keyup', (varx) => {
   const textAreaLength = counterTextArea.value.length + 1;
   console.log(textAreaLength);
   const maxCharacteres = 501;
@@ -40,7 +39,7 @@ counterTextArea.addEventListener('keypress', function(varx) {
     varx.preventDefault();
   }
 
-  let valorDecre = maxCharacteres - textAreaLength;
+  const valorDecre = maxCharacteres - textAreaLength;
 
   counterSpan.innerText = valorDecre;
 
