@@ -24,23 +24,20 @@ function enableEnviar() {
   }
 }
 
+const counterTextArea = document.getElementById('textArea');
+const counterSpan = document.getElementById('counter');
+
+function contadorCaracter() {
+  const textAreaLength = counterTextArea.value.length;
+  console.log(textAreaLength);
+  const maxCharacteres = 500;
+  const valorDecre = maxCharacteres - textAreaLength;
+  counterSpan.innerText = valorDecre;
+}
+
 checkbox.addEventListener('change', enableEnviar);
 
 // https://www.youtube.com/watch?v=sRlgAjlwz0o
 // Ajudou a realizar o requisito 20 com o keypress
 
-const counterTextArea = document.getElementById('textArea');
-const counterSpan = document.getElementById('counter');
-counterTextArea.addEventListener('keyup', (varx) => {
-  const textAreaLength = counterTextArea.value.length + 1;
-  console.log(textAreaLength);
-  const maxCharacteres = 501;
-  if (textAreaLength >= maxCharacteres) {
-    varx.preventDefault();
-  }
-
-  const valorDecre = maxCharacteres - textAreaLength;
-
-  counterSpan.innerText = valorDecre;
-
-});
+counterTextArea.addEventListener('input', contadorCaracter);
